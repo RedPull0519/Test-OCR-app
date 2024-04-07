@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>写真読込機能付きサイト</title>
+    <meta charset="UTF-8">
+    <title>OCR機能付きサイト</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script> <!-- Tesseract.jsのCDN -->
 </head>
 <body>
-	
+    <input type="file" id="upload" accept="image/*">
+    <div id="text"></div> <!-- OCR結果表示用 -->
 
-    <h1>iPadの写真を選択</h1>
-
-    <input type="file" accept="image/*" id="file-input">
-    
-    <script src="app.js"></script>
-    <!-- CDNの読み込み -->
-	 <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2/dist/tesseract.min.js">
-	 </script>
-
-	<h1>写真読込機能付きサイト</h1>
-  	<input type="file" id="file-input">
- 	<button id="upload-button">アップロード</button>
- 	<div id="result"></div>
+    <script>
+        document.getElementById('upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                // Tesseract.jsでOCR処理を行う
+                Tesseract.recognize(
+                    file,
+                    'jpn', // 言語コード
+                    {
+                        logger: m => console.log(m) // プロセスのログを表示
+                    }
+                ).then(({ data: { text } }) => {
+                    // 結果を表示エリアにセット
+                    document.getElementById('text').innerText = text;
+                });
+            }
+        });
+    </script>
 </body>
 </html>

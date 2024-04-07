@@ -7,33 +7,36 @@
         justify-content: center;
         height: 100vh;
         margin: 0;
-        background-color: #f0f0f0;
+        background-color: #eef2f7; /* 明るいグレー */
     }
 
     input[type="file"] {
-        border: 2px solid #007bff;
+        border: none;
+        color: #fff;
+        background-color: #007bff; /* 明るい青 */
         border-radius: 5px;
-        padding: 10px;
+        padding: 10px 20px;
         margin: 20px 0;
         cursor: pointer;
-        outline: none;
-        transition: border-color 0.3s;
+        font-weight: bold;
+        transition: background-color 0.3s;
     }
 
     input[type="file"]:hover,
     input[type="file"]:focus {
-        border-color: #0056b3;
+        background-color: #0056b3; /* 濃い青 */
     }
 
     #text {
-        border: 1px solid #ddd;
+        border: none;
         border-radius: 5px;
         padding: 20px;
         width: 80%;
         max-width: 600px;
         height: 150px;
         overflow-y: auto;
-        background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        background-color: #ffffff; /* 白 */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        color: #333; /* 暗いグレー */
     }
 </style>

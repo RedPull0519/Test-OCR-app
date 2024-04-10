@@ -1,55 +1,45 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    background-color: #f4f7f6;
-    color: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f6;
+  text-align: center; /* 全ての要素を中央揃えに */
 }
 
-input[type="file"] {
-    border: 2px solid #007bff;
-    background-color: #fff;
-    color: #007bff;
-    padding: 12px 20px;
-    border-radius: 5px;
-    margin: 20px 0;
-    cursor: pointer;
-    display: inline-block;
+header {
+  background-color: #8be88b; /* 薄いライムグリーン */
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-#startOcr {
-    background-color: #28a745;
-    border: none;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
+input[type="file"], #startOcr {
+  border: 2px solid #007bff;
+  padding: 10px 20px;
+  margin-top: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #007bff;
+  background-color: #fff;
+  border-radius: 5px;
+  display: inline-block;
 }
 
 #text {
-    border: 1px solid #ddd;
-    padding: 15px;
-    max-width: 600px;
-    width: 100%;
-    height: 150px;
-    overflow-y: auto;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    margin-top: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  border: 1px solid #ddd;
+  height: 150px;
+  overflow-y: auto;
+  background-color: #fff;
+  margin: 20px auto; /* 中央揃え */
 }
 
 @media (max-width: 768px) {
-    input[type="file"], #startOcr, #text {
-        width: calc(100% - 40px);
-        padding: 10px;
-    }
-}
-
-/* 新しい色を追加してデザインに深みを加える */
-:root {
-    --accent-color: #ff5722; /* アクセントカラー */
-}
-
-#startOcr {
-    background-color: var(--accent-color);
+  input[type="file"], #startOcr, #text {
+      width: 75%; /* モバイル対応のための幅調整 */
+  }
 }

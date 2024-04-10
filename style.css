@@ -1,42 +1,57 @@
 <style>
     body {
         font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #eef2f7;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #eef2f7; /* 明るいグレー */
     }
 
     input[type="file"] {
         border: none;
         color: #fff;
-        background-color: #007bff; /* 明るい青 */
-        border-radius: 5px;
+        background-color: #007bff;
         padding: 10px 20px;
+        border-radius: 5px;
         margin: 20px 0;
-        cursor: pointer;
         font-weight: bold;
-        transition: background-color 0.3s;
+        cursor: pointer;
     }
 
-    input[type="file"]:hover,
-    input[type="file"]:focus {
-        background-color: #0056b3; /* 濃い青 */
+    #startOcr {
+        border: none;
+        color: #fff;
+        background-color: #28a745;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     #text {
-        border: none;
-        border-radius: 5px;
-        padding: 20px;
-        width: 80%;
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: calc(100% - 40px);
         max-width: 600px;
         height: 150px;
         overflow-y: auto;
-        background-color: #ffffff; /* 白 */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        color: #333; /* 暗いグレー */
+        background-color: #fff;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        input[type="file"], #startOcr {
+            width: calc(100% - 20px);
+        }
+
+        #text {
+            width: calc(100% - 20px);
+        }
     }
 </style>
